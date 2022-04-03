@@ -8,6 +8,8 @@
 
 #include <SFML/Graphics.hpp>
 #include "Player.h"
+#include "EnemyOne.h"
+#include "EnemyTwo.h"
 
 class Game
 {
@@ -26,9 +28,14 @@ private:
 	void setupSprite();
 
 	sf::RenderWindow m_window; // main SFML window
-	sf::Font m_ArialBlackfont; // font used by message
+	sf::Font m_font; // font used by message
+	sf::Text m_score;
+	int score = 0;
 
-	Player player;
+	Player player; // player
+
+	EnemyOne enemyOnes[5]; // 5 enemyOnes
+	EnemyTwo enemyTwos[3]; // 3 enemyTwos
 
 	sf::Sprite bg;
 	sf::Texture bgTex;

@@ -8,7 +8,7 @@ Player::Player()
 	texDown.loadFromFile("ASSETS/IMAGES/down.png");
 	texLeft.loadFromFile("ASSETS/IMAGES/left.png");
 	body.setTexture(texDown);
-	body.setScale(2.f, 2.f);
+	body.setScale(3.f, 3.f);
 	projectileTex.loadFromFile("ASSETS/IMAGES/arrow.png");
 	for (int i = 0; i < MAX_PROJ; i++)
 	{

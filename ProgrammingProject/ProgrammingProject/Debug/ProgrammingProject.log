@@ -1,7 +1,12 @@
 ﻿  Game.cpp
-  Player.cpp
-  Projectile.cpp
-  main.cpp
-  Generating Code...
-  LINK : C:\Users\C00260445\Desktop\ProgrammingProject\ProgrammingProject\Debug\ProgrammingProject.exe not found or not built by the last incremental link; performing full link
-  ProgrammingProject.vcxproj -> C:\Users\C00260445\Desktop\ProgrammingProject\ProgrammingProject\Debug\ProgrammingProject.exe
+C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\ProgrammingProject\Game.cpp(187,86): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\ProgrammingProject\Game.cpp(192,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+  ProgrammingProject.vcxproj -> C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\Debug\ProgrammingProject.exe

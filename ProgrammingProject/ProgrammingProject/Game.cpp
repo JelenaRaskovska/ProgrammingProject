@@ -2,7 +2,7 @@
 // Student ID: C00273875
 // Date: 13/02/22
 // Time taken:
-// Known Bugs: 
+// Known Bugs: first 2 enemies are invincible for some time
 
 #include "Game.h"
 #include <iostream>
@@ -92,7 +92,42 @@ void Game::update(sf::Time t_deltaTime)
 		m_window.close();
 	}
 	player.update(t_deltaTime);
-
+	for (int i = 0; i < 5; i++)
+	{
+		enemyOnes[i].update(t_deltaTime, player.body.getPosition());
+		if (enemyOnes[i].increaseScore)
+		{
+			score++;
+			enemyOnes[i].increaseScore = false;
+			m_score.setString("Score: " + std::to_string(score));
+		}
+		for (int x = 0; x < player.MAX_PROJ; x++)
+		{
+			if (enemyOnes[i].isColliding(player.projectile[x].body.getGlobalBounds()))
+			{
+				player.projectile[x].body.setPosition(-10000,-10000);
+				enemyOnes[i].takeDamage();
+			}
+		}
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		enemyTwos[i].update(t_deltaTime, sf::Vector2f(400,600));
+		if (enemyTwos[i].increaseScore)
+		{
+			score++;
+			enemyTwos[i].increaseScore = false;
+			m_score.setString("Score: " + std::to_string(score));
+		}
+		for (int x = 0; x < player.MAX_PROJ; x++)
+		{
+			if (enemyTwos[i].isColliding(player.projectile[x].body.getGlobalBounds()))
+			{
+				player.projectile[x].body.setPosition(-10000, -10000);
+				enemyTwos[i].takeDamage();
+			}
+		}
+	}
 }
 
 /// <summary>
@@ -104,10 +139,21 @@ void Game::render()
 	m_window.draw(bg);
 
 	m_window.draw(player.body);
+	for (int i = 0; i < 5; i++)
+	{
+		if (enemyOnes[i].alive) m_window.draw(enemyOnes[i].body);
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		if (enemyTwos[i].alive) m_window.draw(enemyTwos[i].body);
+	}
+
 	for (int i = 0; i < player.MAX_PROJ; i++)
 	{
 		m_window.draw(player.projectile[i].body);
 	}
+
+	m_window.draw(m_score);
 
 	m_window.display();
 }
@@ -117,10 +163,14 @@ void Game::render()
 /// </summary>
 void Game::setupFontAndText()
 {
-	if (!m_ArialBlackfont.loadFromFile("ASSETS/FONTS/ariblk.ttf"))
+	if (!m_font.loadFromFile("ASSETS/FONTS/rainyhearts.ttf"))
 	{
 		std::cout << "problem loading arial black font" << std::endl;
 	}
+	m_score.setFont(m_font);
+	m_score.setString("Score: 0");
+	m_score.setFillColor(sf::Color::Black);
+	m_score.setCharacterSize(48);
 }
 
 /// <summary>
@@ -131,6 +181,16 @@ void Game::setupSprite()
 	bgTex.loadFromFile("ASSETS/IMAGES/background.png");
 	bg.setTexture(bgTex);
 	player.body.setPosition(200,200);
+	for (int i = 0; i < 5; i++)
+	{
+		enemyOnes[i].setup();
+		enemyOnes[i].body.setPosition(enemyOnes[i].body.getPosition() - sf::Vector2f(0,100 * i));
+	}
+	for (int i = 0; i < 3; i++)
+	{
+		enemyTwos[i].setup();
+		enemyTwos[i].body.setPosition(enemyTwos[i].body.getPosition() - sf::Vector2f(300, 100 * i));
+	}
 }
 
 
