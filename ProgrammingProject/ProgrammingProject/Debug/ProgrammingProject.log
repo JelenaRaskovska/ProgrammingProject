@@ -1,12 +1,12 @@
 ﻿  Game.cpp
-C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\ProgrammingProject\Game.cpp(187,86): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\lenar\Desktop\ProgrammingProject\ProgrammingProject\ProgrammingProject\Game.cpp(188,86): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\ProgrammingProject\Game.cpp(192,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\lenar\Desktop\ProgrammingProject\ProgrammingProject\ProgrammingProject\Game.cpp(193,89): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  ProgrammingProject.vcxproj -> C:\Users\C00260445\Downloads\ProgrammingProject-main\ProgrammingProject-main\ProgrammingProject\Debug\ProgrammingProject.exe
+  ProgrammingProject.vcxproj -> C:\Users\lenar\Desktop\ProgrammingProject\ProgrammingProject\Debug\ProgrammingProject.exe

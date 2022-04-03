@@ -2,7 +2,8 @@
 // Student ID: C00273875
 // Date: 13/02/22
 // Time taken:
-// Known Bugs: first 2 enemies are invincible for some time
+// Known Bugs: first 2 enemies are invincible for some time, need to kill them in order for either type to spawn,
+// score continues to go up after hitting one of the first enemies
 
 #include "Game.h"
 #include <iostream>
